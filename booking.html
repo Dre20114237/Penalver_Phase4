@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link" href="packages.html">Packages</a>
+      <a class="mobile-nav-link" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link active" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section booking-section">
+    <div class="container">
+
+      <a href="contact.html" class="back-link">&#8592; Back to Contact</a>
+
+      <div class="section-header">
+        <h2>Book a Session</h2>
+        <p>Reserve your one-on-one time with Me. Pick a date, time, and duration that works for you.</p>
+      </div>
+
+      <div class="booking-layout">
+
+        <!-- Left info -->
+        <div class="booking-info">
+          <h2>What to expect</h2>
+          <p>A private studio booking gives you dedicated time with Me to plan, discuss, and shoot. No rush — just you and your vision.</p>
+          <div class="booking-highlights">
+            <div class="booking-highlight">
+              <div class="highlight-icon">🎯</div>
+              <div><div class="highlight-title">Pre-shoot Planning</div><div class="highlight-desc">Discuss ideas, mood boards, and goals</div></div>
+            </div>
+            <div class="booking-highlight">
+              <div class="highlight-icon">📸</div>
+              <div><div class="highlight-title">In-Studio Shooting</div><div class="highlight-desc">Controlled lighting and full setup</div></div>
+            </div>
+            <div class="booking-highlight">
+              <div class="highlight-icon">✏️</div>
+              <div><div class="highlight-title">Live Preview &amp; Edit</div><div class="highlight-desc">See shots in real-time together</div></div>
+            </div>
+            <div class="booking-highlight">
+              <div class="highlight-icon">📦</div>
+              <div><div class="highlight-title">Delivered Within 5 Days</div><div class="highlight-desc">Final edited photos via Google Drive</div></div>
+            </div>
+          </div>
+          <div class="pricing-box" id="pricingBox">
+            <h4>Estimated Cost</h4>
+            <div class="pricing-row"><span>Studio rate</span><span>&#8369;800 / hr</span></div>
+            <div class="pricing-row" id="priceHours"><span>Duration</span><span>—</span></div>
+            <div class="pricing-row total" id="priceTotal"><span>Total</span><span>—</span></div>
+          </div>
+        </div>
+
+        <!-- Right form -->
+        <div class="booking-form-card">
+          <div id="bookingFormView">
+            <h3>Reserve Your Slot</h3>
+            <p class="form-sub">Fill in your details and Me will confirm within 24 hours.</p>
+
+            <div class="steps-bar">
+              <div class="step active" id="step1"><div class="step-num">1</div><div class="step-label">Your Info</div></div>
+              <div class="step-line"></div>
+              <div class="step" id="step2"><div class="step-num">2</div><div class="step-label">Date &amp; Time</div></div>
+              <div class="step-line"></div>
+              <div class="step" id="step3"><div class="step-num">3</div><div class="step-label">Confirm</div></div>
+            </div>
+
+            <form id="bookingForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" id="bName" placeholder="Juan dela Cruz" required />
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" id="bEmail" placeholder="you@email.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="bPhone" placeholder="+63 912 345 6789" />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Preferred Date</label>
+                  <input type="date" id="bDate" required />
+                </div>
+                <div class="form-group">
+                  <label>Session Type</label>
+                  <select id="bType">
+                    <option value="">Select type...</option>
+                    <option>Portrait Session</option>
+                    <option>Product Photography</option>
+                    <option>Creative Concept</option>
+                    <option>Event Pre-Planning</option>
+                    <option>Custom / Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Preferred Time Slot</label>
+                <div class="time-slots">
+                  <div class="time-slot" data-time="8:00 AM">8:00 AM</div>
+                  <div class="time-slot" data-time="9:00 AM">9:00 AM</div>
+                  <div class="time-slot unavailable" data-time="10:00 AM">10:00 AM</div>
+                  <div class="time-slot" data-time="11:00 AM">11:00 AM</div>
+                  <div class="time-slot unavailable" data-time="1:00 PM">1:00 PM</div>
+                  <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+                  <div class="time-slot" data-time="3:00 PM">3:00 PM</div>
+                  <div class="time-slot" data-time="4:00 PM">4:00 PM</div>
+                  <div class="time-slot" data-time="5:00 PM">5:00 PM</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Session Duration</label>
+                <div class="duration-options">
+                  <button type="button" class="duration-btn" data-hours="1">1 hr — &#8369;800</button>
+                  <button type="button" class="duration-btn" data-hours="2">2 hrs — &#8369;1,600</button>
+                  <button type="button" class="duration-btn" data-hours="3">3 hrs — &#8369;2,400</button>
+                  <button type="button" class="duration-btn" data-hours="4">4 hrs — &#8369;3,200</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Additional Notes</label>
+                <textarea id="bNotes" placeholder="Any special requests, themes, or things I should know..."></textarea>
+              </div>
+              <button type="submit" class="book-btn">&#128197; Confirm My Booking</button>
+            </form>
+          </div>
+
+          <!-- Confirmation screen -->
+          <div class="confirmation" id="confirmView">
+            <div class="confirm-icon">🎉</div>
+            <h3>Booking Request Sent!</h3>
+            <p>I will review your reservation and confirm within 24 hours via email. Get ready for your session!</p>
+            <div class="confirm-details" id="confirmDetails"></div>
+            <a href="index.html" class="confirm-home">&#8592; Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+  
+  <script src="javascript.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="#home">
+        <img class="nav-logo" src="YOUR_LOGO.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#about">About & Reviews</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link active" href="#home">Home</a>
+      <a class="mobile-nav-link" href="#gallery">Gallery</a>
+      <a class="mobile-nav-link" href="#about">About & Reviews</a>
+      <a class="mobile-nav-link" href="#contact">Contact</a>
+    </div>
+  </header>
+    <section id="home" class="section home-section">
+      <div class="hero-showcase">
+          <div class="showcase-slide slide-1"></div>
+          <div class="showcase-slide slide-2"></div>
+          <div class="showcase-slide slide-3"></div>
+          <div class="showcase-slide slide-4"></div>
+          <div class="showcase-slide slide-5"></div>
+          <div class="showcase-slide slide-6"></div>
+          
+          <div class="showcase-content">
+              <div class="profile-wrapper">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzU2Mjg3ODZ8MA&ixlib=rb-4.1.0&q=80&w=400" alt="Profile" class="profile-image">
+              </div>
+              
+              <div class="showcase-titles">
+                  <h1 class="showcase-title title-1">Digital Dreams</h1>
+                  <h1 class="showcase-title title-2">Abstract Reality</h1>
+                  <h1 class="showcase-title title-3">Creative Mockup</h1>
+                  <h1 class="showcase-title title-4">Modern Illustration</h1>
+                  <h1 class="showcase-title title-5">Graphic Portfolio</h1>
+                  <h1 class="showcase-title title-6">Colorful Canvas</h1>
+              </div>
+              
+              <p class="showcase-subtitle">Exploring the intersection of art, design, and digital creativity</p>
+          </div>
+      </div>
+  </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>
+            A larger collection of my work, feel free to click around and find more interesting takes by me
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item" data-title="Quiet Horizon" data-description="A wide composition exploring light, mood, and breathing room. This piece is intended to feel reflective and immersive when opened in detail view." data-date="Collection Item • 2026">
+            <img src="Gallery1.jpg" alt="Quiet Horizon artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>Quiet Horizon</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-title="Food Review" data-description="A photo showcasing the burger I took a picture of which was tasty actually." data-date="Collection Item • 2026">
+            <img src="Gallery2.jpg" alt="Food Review artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>Food Review</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-title="Restaurant Review" data-description="Photo of the restaurant of were the burger was taken of and eaten, YUMMY" data-date="Collection Item • 2026">
+            <img src="Gallery3.jpg" alt="Restaurant Review artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>Restaurant Review</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-title="Neko Neko" data-description="A picture taken of where I bought souveniers this is where I took a pic of the packaging" data-date="Collection Item • 2026">
+            <img src="Gallery4.jpg" alt="Neko Neko artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>Neko Neko</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-title="SAMGYUPSAL" data-description="This is a pic of where I ate a samgyupsal with my friend" data-date="Collection Item • 2026">
+            <img src="Gallery5.jpg" alt="SAMGYUPSAL artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>SAMGYUPSAL</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-title="Upper Mountain" data-description="A picture of the mountain I climbed with my friends showcasing a tree and the clouds" data-date="Collection Item • 2026">
+            <img src="Gallery6.jpg" alt="Upper Mountain artwork" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info">
+              <h3>Upper Mountain</h3>
+              <p>Click for full preview and details</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <p>© 2026 Sacred Visual Studios . a visual studio of my work Andre Penalver</p>
+  </footer>
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+      <div class="modal-inner">
+        <div class="modal-image">
+          <img id="modalImg" src="" alt="Expanded artwork preview">
+        </div>
+        <div class="modal-details">
+          <h3 id="modalTitle">Artwork Title</h3>
+          <p id="modalDesc">Artwork description goes here.</p>
+          <p class="modal-date" id="modalDate">Date</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    const sections = document.querySelectorAll('main section');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+      });
+    });
+
+    const setActiveLink = () => {
+      let current = 'home';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    };
+
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalDate = document.getElementById('modalDate');
+    const modalClose = document.getElementById('modalClose');
+    const clickableCards = document.querySelectorAll('.artwork-item, .gallery-item');
+
+    clickableCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const image = card.querySelector('img');
+        modalImg.src = image.src;
+        modalImg.alt = image.alt;
+        modalTitle.textContent = card.dataset.title || 'Artwork';
+        modalDesc.textContent = card.dataset.description || 'Artwork details.';
+        modalDate.textContent = card.dataset.date || '';
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const body = `Hello,\n\nMy name is ${name}.\nMy email is ${email}.\n\n${message}\n\nBest regards,\n${name}`;
+      const mailtoLink = `mailto:creator@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>

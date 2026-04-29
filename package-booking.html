@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Package — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link active" href="packages.html">Packages</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link active" href="packages.html">Packages</a>
+      <a class="mobile-nav-link" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section pkg-booking-section">
+    <div class="container">
+
+      <a href="packages.html" class="back-link">&#8592; Back to Packages</a>
+
+      <div class="section-header">
+        <h2>Book a Session</h2>
+        <p>Fill in your details and Andre will confirm your booking within 24 hours.</p>
+      </div>
+
+      <div class="pkg-booking-layout">
+
+        <!-- Left: Package Summary -->
+        <div class="pkg-summary-card" id="pkgSummary">
+          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2563eb;margin-bottom:0.75rem;">Selected Package</div>
+          <div class="pkg-summary-name" id="sumName">—</div>
+          <div class="pkg-summary-price" id="sumPrice">—</div>
+          <ul class="pkg-features-mini" id="sumFeatures"></ul>
+          <a href="packages.html" class="pkg-change-link">&#8592; Change package</a>
+          <hr style="margin:1.25rem 0;border:none;border-top:1px solid #f3f4f6;">
+          <div style="font-size:0.78rem;color:#6b7280;line-height:1.6;">
+            📍 <strong>Baguio City, Luzon, PH</strong><br>
+            🕐 Confirmation within <strong>24 hours</strong><br>
+            📧 <strong>20114237@s.ubaguio.edu</strong>
+          </div>
+        </div>
+
+        <!-- Right: Booking Form -->
+        <div class="booking-form-card">
+          <div id="pkgFormView">
+            <h3>Reserve Your Session</h3>
+            <p class="form-sub">Provide your details and preferred schedule below.</p>
+
+            <div class="steps-bar">
+              <div class="step active" id="pstep1"><div class="step-num">1</div><div class="step-label">Your Info</div></div>
+              <div class="step-line"></div>
+              <div class="step" id="pstep2"><div class="step-num">2</div><div class="step-label">Schedule</div></div>
+              <div class="step-line"></div>
+              <div class="step" id="pstep3"><div class="step-num">3</div><div class="step-label">Confirm</div></div>
+            </div>
+
+            <form id="pkgBookingForm">
+
+              <!-- Package selector (pre-filled from URL if available) -->
+              <div class="form-group">
+                <label>Package</label>
+                <select id="pbPackage" required>
+                  <option value="">Select a package...</option>
+                  <option value="Snapshot|₱500">📷 Snapshot — ₱500</option>
+                  <option value="Essentials|₱1,200">🌅 Essentials — ₱1,200</option>
+                  <option value="Prime|₱2,500">⭐ Prime — ₱2,500</option>
+                  <option value="Horizon|₱3,500+">🏔️ Horizon — ₱3,500+</option>
+                  <option value="Legacy|₱5,000+">🎞️ Legacy — ₱5,000+</option>
+                  <option value="Bespoke|Custom">✨ Bespoke — Custom</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" id="pbName" placeholder="Juan dela Cruz" required />
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" id="pbEmail" placeholder="you@email.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="pbPhone" placeholder="+63 912 345 6789" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Preferred Date</label>
+                  <input type="date" id="pbDate" required />
+                </div>
+                <div class="form-group">
+                  <label>Shoot Location</label>
+                  <select id="pbLocation">
+                    <option value="">Prefer a location...</option>
+                    <option>In-Studio (Baguio City)</option>
+                    <option>Outdoor — City Area</option>
+                    <option>Outdoor — Nature / Mountain</option>
+                    <option>Client's Location</option>
+                    <option>To Be Discussed</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Preferred Time Slot</label>
+                <div class="time-slots">
+                  <div class="time-slot" data-time="8:00 AM">8:00 AM</div>
+                  <div class="time-slot" data-time="9:00 AM">9:00 AM</div>
+                  <div class="time-slot unavailable" data-time="10:00 AM">10:00 AM</div>
+                  <div class="time-slot" data-time="11:00 AM">11:00 AM</div>
+                  <div class="time-slot unavailable" data-time="1:00 PM">1:00 PM</div>
+                  <div class="time-slot" data-time="2:00 PM">2:00 PM</div>
+                  <div class="time-slot" data-time="3:00 PM">3:00 PM</div>
+                  <div class="time-slot" data-time="4:00 PM">4:00 PM</div>
+                  <div class="time-slot" data-time="5:00 PM">5:00 PM</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Session Theme / Mood</label>
+                <select id="pbTheme">
+                  <option value="">Select a vibe...</option>
+                  <option>Natural / Candid</option>
+                  <option>Dark & Moody</option>
+                  <option>Bright & Airy</option>
+                  <option>Editorial / Fashion</option>
+                  <option>Documentary / Street</option>
+                  <option>Product / Commercial</option>
+                  <option>Custom (describe below)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Additional Notes</label>
+                <textarea id="pbNotes" placeholder="Any special requests, themes, mood boards, people count, or anything I should know..."></textarea>
+              </div>
+
+              <button type="submit" class="book-btn">&#128197; Confirm My Booking</button>
+            </form>
+          </div>
+
+          <!-- Confirmation screen -->
+          <div class="confirmation" id="pkgConfirmView">
+            <div class="confirm-icon">🎉</div>
+            <h3>Booking Request Sent!</h3>
+            <p>Andre will review your booking and confirm within 24 hours via email. Get ready for your shoot!</p>
+            <div class="confirm-details" id="pkgConfirmDetails"></div>
+            <a href="index.html" class="confirm-home">&#8592; Back to Home</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="javascript.js"></script>
+  <script>
+    // Mobile nav
+    document.getElementById('mobileMenuBtn').addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+    document.querySelectorAll('.mobile-nav-link').forEach(l =>
+      l.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
+    window.addEventListener('scroll', () =>
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10));
+
+    // Package data
+    const pkgData = {
+      'Snapshot':   { price:'₱500 / session',  features:['1-hour shoot session','10 edited photos','1 location only','Delivered via Google Drive','3-day turnaround'] },
+      'Essentials': { price:'₱1,200 / session', features:['2-hour shoot session','25 edited photos','Up to 2 locations','Delivered via Google Drive','5-day turnaround','1 round of revision'] },
+      'Prime':      { price:'₱2,500 / session', features:['4-hour shoot session','50 edited photos','Up to 3 locations','Digital + USB delivery','5-day turnaround','2 rounds of revision','Basic color grading included'] },
+      'Horizon':    { price:'Starting at ₱3,500', features:['Full-day shoot (up to 8 hrs)','80 edited photos','Multiple outdoor locations','Travel fee may apply','Premium color grading','3 rounds of revision'] },
+      'Legacy':     { price:'Starting at ₱5,000', features:['2-day shoot coverage','150+ edited photos','Unlimited locations','Short highlight reel (video)','Premium color grading','Unlimited revisions','Printed photo album included'] },
+      'Bespoke':    { price:'Custom pricing', features:['You define the scope & deliverables','Flexible schedule & locations','Any style — portrait, event, product','Discuss and agree on terms','Best for unique or large projects'] },
+    };
+
+    function updateSummary(pkgName) {
+      const d = pkgData[pkgName];
+      if (!d) {
+        document.getElementById('sumName').textContent = '—';
+        document.getElementById('sumPrice').textContent = '—';
+        document.getElementById('sumFeatures').innerHTML = '';
+        return;
+      }
+      document.getElementById('sumName').textContent  = pkgName;
+      document.getElementById('sumPrice').textContent = d.price;
+      document.getElementById('sumFeatures').innerHTML = d.features.map(f => '<li>' + f + '</li>').join('');
+    }
+
+    // Pre-fill from URL params
+    const params = new URLSearchParams(window.location.search);
+    const urlPkg = params.get('pkg');
+    const sel = document.getElementById('pbPackage');
+    if (urlPkg) {
+      for (let opt of sel.options) {
+        if (opt.value.startsWith(urlPkg)) { opt.selected = true; updateSummary(urlPkg); break; }
+      }
+    }
+
+    sel.addEventListener('change', function() {
+      const name = this.value.split('|')[0];
+      updateSummary(name);
+      document.getElementById('pstep1').classList.add('done');
+    });
+
+    // Min date
+    document.getElementById('pbDate').min = new Date().toISOString().split('T')[0];
+
+    // Time slot selection
+    let selectedTime = '';
+    document.querySelectorAll('.time-slot:not(.unavailable)').forEach(s => {
+      s.addEventListener('click', () => {
+        document.querySelectorAll('.time-slot').forEach(x => x.classList.remove('selected'));
+        s.classList.add('selected');
+        selectedTime = s.dataset.time;
+        document.getElementById('pstep2').classList.add('done');
+      });
+    });
+
+    // Name step progress
+    document.getElementById('pbName').addEventListener('input', () => {
+      if (document.getElementById('pbName').value.trim())
+        document.getElementById('pstep1').classList.add('done');
+    });
+
+    // Submit
+    document.getElementById('pkgBookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!selectedTime) { alert('Please select a preferred time slot.'); return; }
+
+      const pkgVal  = document.getElementById('pbPackage').value;
+      const pkgName = pkgVal ? pkgVal.split('|')[0] : 'Not selected';
+      const pkgPrc  = pkgVal ? pkgVal.split('|')[1] : '—';
+      const name    = document.getElementById('pbName').value.trim();
+      const email   = document.getElementById('pbEmail').value.trim();
+      const phone   = document.getElementById('pbPhone').value.trim() || '—';
+      const date    = document.getElementById('pbDate').value;
+      const loc     = document.getElementById('pbLocation').value || 'To Be Discussed';
+      const theme   = document.getElementById('pbTheme').value || 'To Be Discussed';
+      const notes   = document.getElementById('pbNotes').value.trim() || '—';
+
+      document.getElementById('pstep3').classList.add('active', 'done');
+
+      document.getElementById('pkgConfirmDetails').innerHTML =
+        '<div class="confirm-row"><span class="lbl">Package</span><span class="val">' + pkgName + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Price</span><span class="val" style="color:#2563eb">' + pkgPrc + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Name</span><span class="val">' + name + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Email</span><span class="val">' + email + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Date</span><span class="val">' + date + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Time</span><span class="val">' + selectedTime + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Location</span><span class="val">' + loc + '</span></div>' +
+        '<div class="confirm-row"><span class="lbl">Theme</span><span class="val">' + theme + '</span></div>';
+
+      document.getElementById('pkgFormView').style.display = 'none';
+      document.getElementById('pkgConfirmView').classList.add('show');
+
+      const body =
+        'New Package Booking Request\n\n' +
+        'Package: ' + pkgName + ' (' + pkgPrc + ')\n' +
+        'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n' +
+        'Date: ' + date + '\nTime: ' + selectedTime + '\n' +
+        'Location: ' + loc + '\nTheme/Mood: ' + theme + '\n\nNotes:\n' + notes;
+
+      setTimeout(() => {
+        window.location.href =
+          'mailto:andre@sacredvisionstudios.com' +
+          '?subject=' + encodeURIComponent('Package Booking - ' + pkgName + ' - ' + name) +
+          '&body=' + encodeURIComponent(body);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

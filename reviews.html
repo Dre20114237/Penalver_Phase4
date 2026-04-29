@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviews — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link active" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link" href="packages.html">Packages</a>
+      <a class="mobile-nav-link active" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section reviews-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Reviews</h2>
+        <p>Real words from real clients who trusted Sacred Vision Studios with their moments.</p>
+      </div>
+
+      <div class="reviews-layout">
+
+        <!-- Wheel -->
+        <div>
+          <div class="wheel-outer" id="wheelOuter">
+            <div class="wheel-track" id="wheelTrack"></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="wheel-controls">
+          <button class="wheel-btn" id="btnUp" title="Previous">&#8593;</button>
+          <div class="wheel-dots" id="wheelDots"></div>
+          <div class="wheel-counter" id="wheelCounter">1 / 7</div>
+          <button class="wheel-btn" id="btnDown" title="Next">&#8595;</button>
+        </div>
+
+        <!-- Stats -->
+        <div class="reviews-stats">
+          <div class="stats-score">
+            <div class="stats-big">4.9</div>
+            <div class="stats-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="stats-label">Based on 7 reviews</div>
+          </div>
+          <div class="stats-bars">
+            <div class="stat-row"><div class="stat-lbl">5★</div><div class="stat-track"><div class="stat-fill" style="width:86%"></div></div><div class="stat-count">6</div></div>
+            <div class="stat-row"><div class="stat-lbl">4★</div><div class="stat-track"><div class="stat-fill" style="width:14%"></div></div><div class="stat-count">1</div></div>
+            <div class="stat-row"><div class="stat-lbl">3★</div><div class="stat-track"><div class="stat-fill" style="width:0%"></div></div><div class="stat-count">0</div></div>
+            <div class="stat-row"><div class="stat-lbl">2★</div><div class="stat-track"><div class="stat-fill" style="width:0%"></div></div><div class="stat-count">0</div></div>
+            <div class="stat-row"><div class="stat-lbl">1★</div><div class="stat-track"><div class="stat-fill" style="width:0%"></div></div><div class="stat-count">0</div></div>
+          </div>
+          <a href="leave-review.html" class="leave-review-link">&#9998; Leave a Review</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+
+  <script>
+    // Mobile nav
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(function(l) {
+      l.addEventListener('click', function() {
+        document.getElementById('mobileNav').classList.remove('open');
+      });
+    });
+    window.addEventListener('scroll', function() {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+  <script>
+     const reviews = [
+        { stars:'★★★★★', text:'Andre captured our school event perfectly. Every shot had incredible depth and timing I didn\'t expect. The photos tell a story on their own.', name:'Maria Santos', role:'Event Coordinator', initials:'MS', date:'March 2026' },
+        { stars:'★★★★★', text:'I booked the Prime package for a family outing and was blown away. The editing style is clean but full of emotion. Every photo felt like a memory.', name:'James Reyes', role:'Family Client', initials:'JR', date:'February 2026' },
+        { stars:'★★★★★', text:'Sacred Vision Studios made our food event look absolutely mouth-watering. Andre has an eye for color and composition that elevates every frame.', name:'Carla Mendoza', role:'Restaurant Owner', initials:'CM', date:'January 2026' },
+        { stars:'★★★★☆', text:'Really solid work, especially for an outdoor shoot. The mountain photos came out stunning. Would\'ve liked faster turnaround but quality made up for it.', name:'Renzo Villanueva', role:'Adventure Client', initials:'RV', date:'December 2025' },
+        { stars:'★★★★★', text:'Hired Andre for a portrait session and the results were professional-grade. The lighting work was exceptional — clearly understood how to use natural light.', name:'Anna Lim', role:'Portrait Client', initials:'AL', date:'November 2025' },
+        { stars:'★★★★★', text:'The Bespoke package was perfect for our small business product shoot. Andre listened to our vision and delivered beyond expectations. Will book again.', name:'Paolo Cruz', role:'Small Business Owner', initials:'PC', date:'October 2025' },
+        { stars:'★★★★★', text:'Honestly one of the best photography experiences I\'ve had. Andre is professional, easy to work with, and clearly passionate about every shot. The photos were art.', name:'Sofia Dela Rosa', role:'Lifestyle Client', initials:'SR', date:'September 2025' }
+      ];
+  
+      const track = document.getElementById('wheelTrack');
+      const dotsEl = document.getElementById('wheelDots');
+      const counter = document.getElementById('wheelCounter');
+  
+      const CARD_H = 210;
+      const GAP    = 20;
+      const STEP   = CARD_H + GAP;
+  
+      let current = 0;
+  
+      // Build cards & dots
+      reviews.forEach((r, i) => {
+        const card = document.createElement('div');
+        card.className = 'review-card' + (i === 0 ? ' active' : '');
+        card.style.minHeight = CARD_H + 'px';
+        card.innerHTML =
+          '<div class="review-stars">' + r.stars + '</div>' +
+          '<div class="review-text">' + r.text + '</div>' +
+          '<div class="review-author">' +
+            '<div class="review-avatar">' + r.initials + '</div>' +
+            '<div><div class="review-name">' + r.name + '</div><div class="review-role">' + r.role + '</div></div>' +
+            '<div class="review-date">' + r.date + '</div>' +
+          '</div>';
+        track.appendChild(card);
+  
+        const dot = document.createElement('div');
+        dot.className = 'wheel-dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(dot);
+      });
+  
+      function goTo(index) {
+        const cards = track.querySelectorAll('.review-card');
+        const dots  = dotsEl.querySelectorAll('.wheel-dot');
+        cards[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = ((index % reviews.length) + reviews.length) % reviews.length;
+        cards[current].classList.add('active');
+        dots[current].classList.add('active');
+        // bottom-to-top: current slide scrolls up, next comes from below
+        track.style.transform = 'translateY(-' + (current * STEP) + 'px)';
+        counter.textContent = (current + 1) + ' / ' + reviews.length;
+      }
+  
+      document.getElementById('btnUp').addEventListener('click',   () => goTo(current - 1));
+      document.getElementById('btnDown').addEventListener('click', () => goTo(current + 1));
+  
+      // Auto-rotate every 4s
+      let timer = setInterval(() => goTo(current + 1), 4000);
+  
+      // Pause on hover
+      const wheelOuter = document.getElementById('wheelOuter');
+      wheelOuter.addEventListener('mouseenter', () => clearInterval(timer));
+      wheelOuter.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), 4000); });
+  
+      // Keyboard
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowUp')   goTo(current - 1);
+        if (e.key === 'ArrowDown') goTo(current + 1);
+      });
+  </script>
+</body>
+</html>

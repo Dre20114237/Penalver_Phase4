@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packages — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link active" href="packages.html">Packages</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link active" href="packages.html">Packages</a>
+      <a class="mobile-nav-link" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section packages-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Packages</h2>
+        <p>Choose the package that fits your vision. Some are fixed — others can be tailored to your budget.</p>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- 1. Snapshot — FIXED -->
+        <div class="package-card">
+          <div class="package-icon">📷</div>
+          <div>
+            <div class="package-name">Snapshot</div>
+            <div class="package-tagline">Quick &amp; casual moments</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">&#8369;500 <span>/ session</span></div>
+            <div class="price-note fixed">🔒 Non-negotiable</div>
+          </div>
+          <ul class="package-features">
+            <li>1-hour shoot session</li>
+            <li>10 edited photos</li>
+            <li>1 location only</li>
+            <li>Delivered via Google Drive</li>
+            <li>3-day turnaround</li>
+          </ul>
+          <button class="package-btn btn-outline-blue" onclick="bookPackage('Snapshot','&#8369;500')">Book This Package</button>
+        </div>
+
+        <!-- 2. Essentials — FIXED -->
+        <div class="package-card">
+          <div class="package-icon">🌅</div>
+          <div>
+            <div class="package-name">Essentials</div>
+            <div class="package-tagline">Portraits &amp; everyday life</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">&#8369;1,200 <span>/ session</span></div>
+            <div class="price-note fixed">🔒 Non-negotiable</div>
+          </div>
+          <ul class="package-features">
+            <li>2-hour shoot session</li>
+            <li>25 edited photos</li>
+            <li>Up to 2 locations</li>
+            <li>Delivered via Google Drive</li>
+            <li>5-day turnaround</li>
+            <li>1 round of revision</li>
+          </ul>
+          <button class="package-btn btn-outline-blue" onclick="bookPackage('Essentials','&#8369;1,200')">Book This Package</button>
+        </div>
+
+        <!-- 3. Prime — FEATURED, FIXED -->
+        <div class="package-card featured">
+          <div class="featured-badge">Most Popular</div>
+          <div class="package-icon">⭐</div>
+          <div>
+            <div class="package-name">Prime</div>
+            <div class="package-tagline">Events &amp; special occasions</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">&#8369;2,500 <span>/ session</span></div>
+            <div class="price-note fixed">🔒 Non-negotiable</div>
+          </div>
+          <ul class="package-features">
+            <li>4-hour shoot session</li>
+            <li>50 edited photos</li>
+            <li>Up to 3 locations</li>
+            <li>Digital + USB delivery</li>
+            <li>5-day turnaround</li>
+            <li>2 rounds of revision</li>
+            <li>Basic color grading included</li>
+          </ul>
+          <button class="package-btn btn-blue" onclick="bookPackage('Prime','&#8369;2,500')">Book This Package</button>
+        </div>
+
+        <!-- 4. Horizon — NEGOTIABLE -->
+        <div class="package-card" id="pkg-horizon">
+          <div class="package-icon">🏔️</div>
+          <div>
+            <div class="package-name">Horizon</div>
+            <div class="package-tagline">Landscape &amp; outdoor adventures</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">&#8369;3,500 <span>starting at</span></div>
+            <div class="price-note negotiable">💬 Price can be negotiated</div>
+          </div>
+          <ul class="package-features">
+            <li>Full-day shoot (up to 8 hrs)</li>
+            <li>80 edited photos</li>
+            <li>Multiple outdoor locations</li>
+            <li>Travel fee may apply</li>
+            <li>Premium color grading</li>
+            <li>3 rounds of revision</li>
+          </ul>
+          <div class="custom-price-block">
+            <div class="custom-price-label">Propose your budget</div>
+            <input class="custom-price-input" type="number" id="price-horizon" placeholder="&#8369; Enter your offer" min="1000" />
+          </div>
+          <button class="package-btn btn-amber" onclick="toggleNegotiate('pkg-horizon','Horizon','price-horizon')">💬 Negotiate Price</button>
+        </div>
+
+        <!-- 5. Legacy — NEGOTIABLE -->
+        <div class="package-card" id="pkg-legacy">
+          <div class="package-icon">🎞️</div>
+          <div>
+            <div class="package-name">Legacy</div>
+            <div class="package-tagline">Long-form storytelling &amp; events</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">&#8369;5,000 <span>starting at</span></div>
+            <div class="price-note negotiable">💬 Price can be negotiated</div>
+          </div>
+          <ul class="package-features">
+            <li>2-day shoot coverage</li>
+            <li>150+ edited photos</li>
+            <li>Unlimited locations</li>
+            <li>Short highlight reel (video)</li>
+            <li>Premium color grading</li>
+            <li>Unlimited revisions</li>
+            <li>Printed photo album included</li>
+          </ul>
+          <div class="custom-price-block">
+            <div class="custom-price-label">Propose your budget</div>
+            <input class="custom-price-input" type="number" id="price-legacy" placeholder="&#8369; Enter your offer" min="2000" />
+          </div>
+          <button class="package-btn btn-amber" onclick="toggleNegotiate('pkg-legacy','Legacy','price-legacy')">💬 Negotiate Price</button>
+        </div>
+
+        <!-- 6. Bespoke — FULLY CUSTOM -->
+        <div class="package-card" id="pkg-bespoke">
+          <div class="package-icon">✨</div>
+          <div>
+            <div class="package-name">Bespoke</div>
+            <div class="package-tagline">Fully custom — your vision, your price</div>
+          </div>
+          <div class="package-price-block">
+            <div class="package-price">Custom <span>pricing</span></div>
+            <div class="price-note negotiable">💬 Fully negotiable</div>
+          </div>
+          <ul class="package-features">
+            <li>You define the scope &amp; deliverables</li>
+            <li>Flexible schedule &amp; locations</li>
+            <li>Any style — portrait, event, product</li>
+            <li>Discuss and agree on terms</li>
+            <li>Best for unique or large projects</li>
+          </ul>
+          <div class="custom-price-block">
+            <div class="custom-price-label">Your proposed budget</div>
+            <input class="custom-price-input" type="number" id="price-bespoke" placeholder="&#8369; Enter your budget" min="500" />
+          </div>
+          <button class="package-btn btn-amber" onclick="toggleNegotiate('pkg-bespoke','Bespoke','price-bespoke')">💬 Propose a Price</button>
+        </div>
+
+      </div>
+
+      <div class="packages-note">
+        <span>ℹ️</span>
+        <p><strong>🔒 Non-negotiable</strong> packages are fixed and cannot be changed. <strong>💬 Negotiable</strong> packages let you propose a custom price — I will review your offer and get back to you via the Contact page.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="javascript.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>

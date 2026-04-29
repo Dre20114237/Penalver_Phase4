@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave a Review — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link active" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link" href="packages.html">Packages</a>
+      <a class="mobile-nav-link active" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section review-form-section">
+    <div class="container">
+
+      <a href="reviews.html" class="back-link">&#8592; Back to Reviews</a>
+
+      <div class="section-header">
+        <h2>Leave a Review</h2>
+        <p>Shared your experience with Sacred Vision Studios? Your words mean everything.</p>
+      </div>
+
+      <div class="review-form-card">
+        <div id="reviewFormView">
+          <h3 style="font-size:1.3rem;font-weight:800;color:#111;margin-bottom:0.3rem;">Share Your Experience</h3>
+          <p class="form-sub">Tell others what working with Andre was like. Honest reviews help future clients.</p>
+
+          <form id="reviewForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="rName" placeholder="Juan dela Cruz" required />
+              </div>
+              <div class="form-group">
+                <label>Your Role / Title</label>
+                <input type="text" id="rRole" placeholder="e.g. Event Coordinator" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Package / Session Type</label>
+              <select id="rPackage">
+                <option value="">Select what you booked...</option>
+                <option>Snapshot</option>
+                <option>Essentials</option>
+                <option>Prime</option>
+                <option>Horizon</option>
+                <option>Legacy</option>
+                <option>Bespoke</option>
+                <option>Studio Session (1-on-1)</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Your Rating</label>
+              <div class="star-picker" id="starPicker">
+                <button type="button" class="star-btn" data-val="1">★</button>
+                <button type="button" class="star-btn" data-val="2">★</button>
+                <button type="button" class="star-btn" data-val="3">★</button>
+                <button type="button" class="star-btn" data-val="4">★</button>
+                <button type="button" class="star-btn" data-val="5">★</button>
+              </div>
+              <div style="font-size:0.78rem;color:#9ca3af;margin-top:0.3rem;" id="starLabel">Click to rate</div>
+            </div>
+
+            <div class="form-group">
+              <label>Your Review</label>
+              <textarea id="rText" placeholder="Describe your experience — the shoot, communication, final photos, anything that stood out..." required style="min-height:140px;"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Date of Session</label>
+              <input type="month" id="rDate" />
+            </div>
+
+            <button type="submit" class="submit-btn">&#9733; Submit My Review</button>
+          </form>
+        </div>
+
+        <!-- Confirmation -->
+        <div class="review-confirm" id="reviewConfirm">
+          <div class="review-confirm-icon">🌟</div>
+          <h3 style="font-size:1.6rem;font-weight:800;color:#111;margin-bottom:0.5rem;">Thank You!</h3>
+          <p style="color:#6b7280;font-size:0.92rem;line-height:1.7;max-width:400px;margin:0 auto 1.5rem;">
+            Your review has been sent to Andre. It means a lot and helps other clients make the right choice.
+          </p>
+          <a href="reviews.html" class="confirm-home" style="background:#2563eb;">&#8592; Back to Reviews</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+
+  <script src="javascript.js"></script>
+  <script>
+    // Mobile nav
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+      document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => mobileNav.classList.remove('open')));
+    }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Star picker
+    let selectedStars = 0;
+    const starLabels = ['','Poor','Fair','Good','Great','Excellent'];
+    document.querySelectorAll('.star-btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        const v = parseInt(btn.dataset.val);
+        document.querySelectorAll('.star-btn').forEach(b => b.classList.toggle('lit', parseInt(b.dataset.val) <= v));
+      });
+      btn.addEventListener('mouseleave', () => {
+        document.querySelectorAll('.star-btn').forEach(b => b.classList.toggle('lit', parseInt(b.dataset.val) <= selectedStars));
+      });
+      btn.addEventListener('click', () => {
+        selectedStars = parseInt(btn.dataset.val);
+        document.getElementById('starLabel').textContent = starLabels[selectedStars] + ' (' + selectedStars + '/5)';
+      });
+    });
+
+    // Form submit
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!selectedStars) { alert('Please pick a star rating.'); return; }
+      const name    = document.getElementById('rName').value.trim();
+      const role    = document.getElementById('rRole').value.trim() || 'Client';
+      const pkg     = document.getElementById('rPackage').value || 'General';
+      const text    = document.getElementById('rText').value.trim();
+      const date    = document.getElementById('rDate').value || '';
+      const stars   = '★'.repeat(selectedStars) + '☆'.repeat(5 - selectedStars);
+
+      const body =
+        'New Review Submission\n\n' +
+        'Name: ' + name + '\nRole: ' + role + '\nPackage: ' + pkg +
+        '\nRating: ' + stars + ' (' + selectedStars + '/5)' +
+        '\nDate: ' + date +
+        '\n\nReview:\n' + text;
+
+      document.getElementById('reviewFormView').style.display = 'none';
+      document.getElementById('reviewConfirm').classList.add('show');
+
+      setTimeout(() => {
+        window.location.href =
+          'mailto:andre@sacredvisionstudios.com' +
+          '?subject=' + encodeURIComponent('New Review from ' + name) +
+          '&body=' + encodeURIComponent(body);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

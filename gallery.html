@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Sacred Vision Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header id="navbar">
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img class="nav-logo" src="Logo.png" alt="Logo" />
+        <span class="logo">Sacred Vision Studios</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀</span></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">&#9776;</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a class="mobile-nav-link" href="index.html">Home</a>
+      <a class="mobile-nav-link active" href="gallery.html">Gallery</a>
+      <a class="mobile-nav-link" href="packages.html">Packages</a>
+      <a class="mobile-nav-link" href="reviews.html">Reviews</a>
+      <a class="mobile-nav-link" href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <section class="section gallery-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p>A larger collection of my work — click any photo to view it up close.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="rope-item">
+          <div class="rope"></div>
+          <article class="gallery-item"
+            data-img="Gallery1.jpg"
+            data-title="Quiet Horizon"
+            data-desc="A wide composition exploring light, mood, and breathing room."
+            data-date="Collection • 2026">
+            <img src="Gallery1.jpg" alt="Quiet Horizon" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><h3>Quiet Horizon</h3><p>Click to view</p></div>
+          </article>
+        </div>
+
+        <div class="rope-item">
+          <div class="rope"></div>
+          <article class="gallery-item"
+            data-img="Gallery2.jpg"
+            data-title="Food Review"
+            data-desc="A photo showcasing a burger I took — and yes, it was tasty."
+            data-date="Collection • 2026">
+            <img src="Gallery2.jpg" alt="Food Review" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><h3>Food Review</h3><p>Click to view</p></div>
+          </article>
+        </div>
+
+        <div class="rope-item">
+          <div class="rope"></div>
+          <article class="gallery-item"
+            data-img="Gallery3.jpg"
+            data-title="Restaurant Review"
+            data-desc="Photo of the restaurant where the burger was eaten. YUMMY."
+            data-date="Collection • 2026">
+            <img src="Gallery3.jpg" alt="Restaurant Review" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><h3>Restaurant Review</h3><p>Click to view</p></div>
+          </article>
+        </div>
+
+        <div class="rope-item">
+          <div class="rope"></div>
+          <article class="gallery-item"
+            data-img="Gallery4.jpg"
+            data-title="Neko Neko"
+            data-desc="Where I bought souvenirs — a picture of the adorable packaging."
+            data-date="Collection • 2026">
+            <img src="Gallery4.jpg" alt="Neko Neko" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><h3>Neko Neko</h3><p>Click to view</p></div>
+          </article>
+        </div>
+
+        <div class="rope-item">
+          <div class="rope"></div>
+          <article class="gallery-item"
+            data-img="Gallery5.jpg"
+            data-title="Samgyupsal"
+            data-desc="Eating samgyupsal with friends — a moment worth capturing."
+            data-date="Collection • 2026">
+            <img src="Gallery5.jpg" alt="SAMGYUPSAL" />
+            <div class="gallery-overlay"></div>
+            <div class="gallery-info"><h3>SAMGYUPSAL</h3><p>Click to view</p></div>
+          </article>
+        </div>
+
+        <!-- ADD PHOTO FRAME -->
+        <div class="rope-item" id="addPhotoFrame">
+          <div class="rope"></div>
+          <div class="gallery-add-frame" id="galleryAddBtn" title="Add a new photo">
+            <input type="file" id="photoUploadInput" accept="image/*" style="display:none" />
+            <div class="add-frame-inner">
+              <div class="add-plus">+</div>
+              <div class="add-label">Add Photo</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Sacred Vision Studios &mdash; Andre Penalver</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+    <div class="gallery-modal-backdrop"></div>
+    <div class="gallery-modal-content">
+      <button class="gallery-modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <div class="gallery-modal-body">
+        <div class="gallery-modal-img-wrap">
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="gallery-modal-info">
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+          <span id="modalDate"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="javascript.js"></script>
+  <script src="modal.js"></script>
+  <script>
+    // ── Add Photo Frame ──
+    const addBtn   = document.getElementById('galleryAddBtn');
+    const fileInput = document.getElementById('photoUploadInput');
+    const grid     = document.querySelector('.gallery-grid');
+    const addFrame = document.getElementById('addPhotoFrame');
+
+    addBtn.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', function () {
+      const file = this.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      const name = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+
+      // Build new rope-item identical to existing ones
+      const ropeItem = document.createElement('div');
+      ropeItem.className = 'rope-item';
+      ropeItem.innerHTML =
+        '<div class="rope"></div>' +
+        '<article class="gallery-item" data-img="' + url + '" data-title="' + name + '" data-desc="Added by you." data-date="Collection • 2026">' +
+          '<img src="' + url + '" alt="' + name + '" />' +
+          '<div class="gallery-overlay"></div>' +
+          '<div class="gallery-info"><h3>' + name + '</h3><p>Click to view</p></div>' +
+        '</article>';
+
+      // Insert before the add frame
+      grid.insertBefore(ropeItem, addFrame);
+
+      // Wire up click → modal (same logic as modal.js)
+      const article = ropeItem.querySelector('.gallery-item');
+      article.addEventListener('click', function () {
+        var modal = document.getElementById('galleryModal');
+        document.getElementById('modalImg').src   = article.dataset.img;
+        document.getElementById('modalImg').alt   = article.dataset.title;
+        document.getElementById('modalTitle').textContent = article.dataset.title;
+        document.getElementById('modalDesc').textContent  = article.dataset.desc;
+        document.getElementById('modalDate').textContent  = article.dataset.date;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Reset so same file can be re-added if needed
+      fileInput.value = '';
+    });
+  </script>
+</body>
+</html>
