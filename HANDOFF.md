@@ -1,4 +1,4 @@
-# Project Handoff: Portfolio Web System
+# Project Handoff: Sacred Vision Studios
 
 ## 1. Architectural Logic (Exam Criteria: 12 pts)
 
