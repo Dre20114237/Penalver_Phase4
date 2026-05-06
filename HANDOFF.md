@@ -59,7 +59,7 @@ All tokens are declared in `style.css` under `:root` and `[data-theme]`. The sit
 
 **Lighthouse Accessibility Score: 100 / 100**
 
-![Lighthouse Accessibility Score 100](lighthouse-screenshot.png)
+![Lighthouse Accessibility Score 100](audit.png)
 
 > Screenshot taken via Chrome DevTools Lighthouse audit on `http://127.0.0.1:5500/index.html` — Mobile device mode, Navigation (Default).
 
