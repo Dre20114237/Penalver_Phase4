@@ -69,7 +69,7 @@ project/
 
 All forms (contact, booking, package booking, leave a review) use `mailto:` links — when submitted they open the user's default email client pre-filled with the details. No backend or server required.
 
-> Email: `andre@sacredvisionstudios.com`
+> Email: `20114237@s.ubaguio.edu`
 
 ---
 
